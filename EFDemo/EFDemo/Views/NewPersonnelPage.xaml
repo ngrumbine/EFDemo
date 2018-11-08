@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="EFDemo.Views.NewPersonnelPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="New Personnel">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="Cancel_Clicked" Text="Cancel">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="cancel.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Clicked="Save_Clicked" Text="Save">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="save.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="15" Spacing="20">
+            <Label FontSize="Medium" Text="First Name" />
+            <Entry FontSize="Small" Text="{Binding Personnel.FirstName}" />
+            <Label FontSize="Medium" Text="Last Name" />
+            <Entry FontSize="Small" Text="{Binding Personnel.LastName}" />
+            <Label FontSize="Medium" Text="Department" />
+            <Label FontSize="Small" Text="{Binding Personnel.Department.Name}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
